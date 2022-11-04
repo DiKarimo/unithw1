@@ -24,6 +24,7 @@ class CashbackHackServiceTest {
         int actual = service.remain(10);
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void noNeedToIncreaseThePurchaseIfAmountIs1000() {
         CashbackHackService service = new CashbackHackService();
@@ -32,6 +33,7 @@ class CashbackHackServiceTest {
         int actual = service.remain(1000);
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void noNeedToIncreaseThePurchaseIfAmountIsMore1000() {
         CashbackHackService service = new CashbackHackService();
@@ -39,4 +41,5 @@ class CashbackHackServiceTest {
         int expected = 0;
         int actual = service.remain(2000);
         Assertions.assertEquals(expected, actual);
+    }
 }
