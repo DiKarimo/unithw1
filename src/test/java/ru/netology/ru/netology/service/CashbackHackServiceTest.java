@@ -33,7 +33,16 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    void noNeedToIncreaseThePurchaseIfAmountIsMore1000() {
+    void needToIncreaseThePurchaseIfAmountIsMore1000() {
+        CashbackHackService service = new CashbackHackService();
+
+        int expected = 500;
+        int actual = service.remain(1500);
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    void noNeedToIncreaseThePurchaseIfAmountIs2000() {
         CashbackHackService service = new CashbackHackService();
 
         int expected = 0;
